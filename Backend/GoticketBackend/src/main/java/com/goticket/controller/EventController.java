@@ -52,6 +52,7 @@ public class EventController {
         eventService.deleteEvent(id);
         return ResponseEntity.ok("✅ Event deleted successfully");
     }
+    //getv seats
     @GetMapping("/{id}/seats")
     public ResponseEntity<List<Seat>> getSeatsForEvent(@PathVariable Long id) {
         List<Seat> seats = eventService.getSeatsForEvent(id);
