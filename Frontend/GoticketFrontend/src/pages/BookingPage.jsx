@@ -107,7 +107,7 @@ const BookingPage = () => {
   useEffect(() => {
     fetchEvent();
   }, [eventId]);
-
+//event
   const fetchEvent = async () => {
     try {
       const res = await api.get(`/events/${eventId}`);
