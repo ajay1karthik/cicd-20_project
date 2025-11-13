@@ -14,6 +14,9 @@ import ManagerDashboard from './pages/ManagerDashboard';
 import UserDashboard from './pages/UserDashboard';
 import BookingPage from './pages/BookingPage';
 
+
+
+
 // This is the main content of your app. It now correctly sits inside the Router.
 const AppContent = () => {
     const { user, loading } = useAuth();
