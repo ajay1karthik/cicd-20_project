@@ -26,15 +26,15 @@ jobs:
       - name: Build and push backend image
         uses: docker/build-push-action@v5
         with:
-          context: ./Backend
-          file: ./Backend/Dockerfile
+          context: ./Backend/GoticketBackend
+          file: ./Backend/GoticketBackend/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/goticketsdp-backend:latest
 
       - name: Build and push frontend image
         uses: docker/build-push-action@v5
         with:
-          context: ./Frontend
-          file: ./Frontend/Dockerfile
+          context: ./Frontend/GoticketFrontend
+          file: ./Frontend/GoticketFrontend/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/goticketsdp-frontend:latest
