@@ -13,7 +13,7 @@ services:
       - goticketsdp-network
 
   backend:
-    image: bpardhasaradhi7/goticketsdp-backend:latest
+    image: 2300030575/goticketsdp-backend:latest
     container_name: goticketsdp-backend
     ports:
       - "2222:2309"
@@ -24,7 +24,7 @@ services:
       - goticketsdp-network
 
   frontend:
-    image: bpardhasaradhi7/goticketsdp-frontend:latest
+    image: 2300030575/goticketsdp-frontend:latest
     container_name: goticketsdp-frontend
     ports:
       - "5172:80"
