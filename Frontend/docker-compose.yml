@@ -1,0 +1,41 @@
+services:
+  mysqldb:
+    image: mysql:8
+    container_name: mysqldb-sdp
+    environment:
+      MYSQL_ROOT_PASSWORD: docker
+      MYSQL_DATABASE: sdpdb
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - goticketsdp-network
+
+  backend:
+    image: bpardhasaradhi7/goticketsdp-backend:latest
+    container_name: goticketsdp-backend
+    ports:
+      - "2222:2309"
+    depends_on:
+      - mysqldb
+    restart: on-failure
+    networks:
+      - goticketsdp-network
+
+  frontend:
+    image: bpardhasaradhi7/goticketsdp-frontend:latest
+    container_name: goticketsdp-frontend
+    ports:
+      - "5172:80"
+    depends_on:
+      - backend
+    restart: on-failure
+    networks:
+      - goticketsdp-network
+
+volumes:
+  mysql_data:
+
+networks:
+  goticketsdp-network:
